@@ -1,0 +1,52 @@
+{
+  "name": "zop",
+  "version": "0.0.0",
+  "description": "Command line interface for creating ZIP files",
+  "bin": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": "^12 || ^14 || >=16",
+    "npm": ">=7"
+  },
+  "scripts": {
+    "coverage": "run-s -c tap tap-coverage",
+    "eslint": "eslint --fix .",
+    "lint": "run-s eslint prettier",
+    "prepare": "husky install",
+    "prettier": "prettier --loglevel warn -w .",
+    "preversion": "npm test",
+    "start": "node lib",
+    "tap": "tap test -R spec",
+    "tap-coverage": "tap --coverage-report html",
+    "test": "run-s lint tap",
+    "version": "git add CHANGELOG.md"
+  },
+  "author": "Jordan Tucker <jordanbtucker@gmail.com> (https://github.com/jordanbtucker)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordanbtucker/zop/issues"
+  },
+  "homepage": "https://github.com/jordanbtucker/zop",
+  "dependencies": {
+    "archiver": "^5.3.0",
+    "fast-glob": "^3.2.11",
+    "jszip": "^3.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "mock-argv": "^2.0.8",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "tap": "^15.1.6"
+  }
+}
